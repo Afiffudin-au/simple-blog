@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+medium-sanity-2
+
 # testing
 /coverage
 
