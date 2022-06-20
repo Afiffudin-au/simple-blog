@@ -30,7 +30,6 @@ function CommentForm({ _id }: CommentFormProps) {
       })
     reset()
   }
-  console.log(errors)
   return (
     <div>
       {submitted ? (
