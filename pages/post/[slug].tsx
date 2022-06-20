@@ -11,9 +11,25 @@ import time from '../../utils/time'
 import CommentForm from '../../components/CommentForm'
 import CommentItem from '../../components/CommentItem'
 import CommentWrapper from '../../components/CommentWrapper'
+import Head from 'next/head'
 function Post({ post }: Props) {
+  console.log(post)
   return (
     <main>
+      <Head>
+        <title>Simpe Blog - is place to write, read, and connect</title>
+        <meta name='description' content={post.description} />
+        {/* for media social meta */}
+        <meta property='og:title' content={post.title} />
+        <meta property='og:description' content={post.description} />
+        <meta property='og:image' content={urlFor(post.author.image).url()} />
+        <meta
+          property='og:url'
+          content={`https://simple-blog.tosulafiffudin.com/post/${post.slug.current}`}
+        />
+        <meta property='og:type' content='article' />
+        <meta property='og:site_name' content={post.title} />
+      </Head>
       <Header />
       <img
         className='w-3/4 mx-auto h-96 object-cover rounded shadow shadow-blue-100'
